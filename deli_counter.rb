@@ -1,11 +1,16 @@
 # Write your code here.
-katz_deli = []
 
+# Takes |katz_deli|, an array of strings representing customers in line
+# and prints out all of the people in the line.
 def line(katz_deli)
-  if line == 0
+  if katz_deli.length == 0
     puts "The line is currently empty."
   else
-    katz_deli.each do |customer|
+    output = ""
+    katz_deli.each_with_index do |customer, index|
+      output += "The line is currently: #{index+1} #{customer}"
+    end
+    puts output
   end
 end
 
