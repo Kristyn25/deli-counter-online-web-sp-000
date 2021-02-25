@@ -25,7 +25,8 @@ def line2(katz_deli)
 end
 
 def take_a_number(katz_deli, customer)
-  katz_deli{|customer, index| " Welcome, #{customer}. You are number #{index+1} in line."}
+  katz_deli.append(customer)
+  "Welcome, #{customer}. You are number #{katz_deli.length} in line."
 end
 
 def now_serving(katz_deli)
