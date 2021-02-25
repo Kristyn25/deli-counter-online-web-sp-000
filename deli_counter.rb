@@ -14,15 +14,25 @@ def line(katz_deli)
   end
 end
 
-#def take_a_number(katz_deli, index)
-#  katz_deli.each_with_index.map{|customer, index| " Welcome, #{customer}. You are number #{index+1} in line."}
-#end
+def line2(katz_deli)
+  if katz_deli.empty?
+    puts "The line is currently empty."
+  else
+    output = ["The line is currently:"]
+    output += katz_deli.map.with_index {|c, i| "#{i+1} #{c}"}
+    puts output.join(" ")
+  end
+end
 
-#def now_serving(katz_deli)
-#  if line >= 1
-#    katz_deli.each do
-#    puts "Currently serving #{customer}."
-#  else
-#    puts "There is nobody waiting to be served!"
-#  end
-#end
+def take_a_number(katz_deli, customer)
+  katz_deli{|customer, index| " Welcome, #{customer}. You are number #{index+1} in line."}
+end
+
+def now_serving(katz_deli)
+  if katz_deli.length == 0
+    puts "There is nobody waiting to be served!"
+  else 
+    puts "Currently serving #{katz_deli[0]}."
+    katz_deli.drop(1)
+ end
+end
